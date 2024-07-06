@@ -1,12 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link rel="stylesheet" href="styles.css"> -->
-  <title>Document</title>
-</head>
-<body>
-  testing
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>To do app</title>
+  </head>
+  <!-- background image by Jeremy Perkins (https://unsplash.com/@jeremyperkins) on Unsplash -->
+  <body>
+    <div class="side-bar">
+      <div class="logo">TODO</div>
+      <div class="default-lists">
+        <ul>
+          <li class="default-list">
+            <div class="icon"><img src="img/home.svg" alt="" /></div>
+            <span>Home</span>
+          </li>
+          <li class="default-list">
+            <div class="icon"><img src="img/inbox.svg" alt="" /></div>
+            <span>Inbox</span>
+          </li>
+          <li class="default-list">
+            <div class="icon"><img src="img/today.svg" alt="" /></div>
+            <span>Today</span>
+          </li>
+        </ul>
+      </div>
+      <div class="user-lists">
+        <ul>
+          <li class="user-list">
+            <div class="icon"><img src="img/list.svg" alt="" /></div>
+            <span>Work</span>
+          </li>
+          <li class="user-list">
+            <div class="icon"><img src="img/list.svg" alt="" /></div>
+            <span>Study</span>
+          </li>
+          <li class="user-list">
+            <div class="icon"><img src="img/list.svg" alt="" /></div>
+            <span>Health</span>
+          </li>
+        </ul>
+      </div>
+      <div class="side-footer">
+        <div class="new-list">
+          <div class="icon"><img src="img/add-list.svg" alt="" /></div>
+          <span>New List</span>
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="header">
+        <div class="left">
+          <h1 class="current-list">Today</h1>
+          <h3 class="current-date">Thursday, 4th July</h3>
+        </div>
+      </div>
+      <div class="tasks">
+        <div class="task">
+          <div class="task-details">
+            <img class="check-box" src="./img/check.svg" alt="">
+            <div class="task-name">This is the task</div>
+            <div class="due-date task-list-name">Today</div>
+          </div>
+          <div class="task-opt">
+            <img class="remove" src="./img/remove.svg" alt="">
+          </div>
+        </div>
+        <div class="task">
+          <div class="task-details">
+            <img class="check-box" src="./img/check.svg" alt="">
+            <div class="task-name">This is the task</div>
+            <div class="due-date task-list-name">Today</div>
+          </div>
+          <div class="task-opt">
+            <img class="remove" src="./img/remove.svg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="main-footer">
+        <div class="add-btn">          
+          <img class="add-icon" src="img/add-task.svg" alt="" />
+          <span>Add task</span>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
+

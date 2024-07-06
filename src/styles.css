@@ -1,3 +1,198 @@
+@import url(https://db.onlinewebfonts.com/c/629a55a7e793da068dc580d184cc0e31?family=Open+Sans);
+
 * {
-  font-size: large;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+div,
+h1,
+h2,
+span {
+  color: #efefef;
+}
+
+/* 
+dark grey #222222
+active grey #353535
+icon grey #9AA5AF
+white #EFEFEF
+subtitle white #DADFDD
+*/
+li {
+  list-style-type: none;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  background-image: url("./img/jeremy-perkins-FsK54FVNRfM-unsplash.jpg");
+  background-size: cover;
+}
+
+.side-bar {
+  flex-basis: 20vw;
+  padding: 20px 20px;
+  background-color: #22222275;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.6rem;
+  padding-left: 10px;
+  user-select: none;
+}
+
+.default-lists {
+  margin-top: 50px;
+}
+
+.user-lists {
+  margin-bottom: auto;
+  margin-top: 25px;
+  overflow-y: auto;
+}
+
+.side-bar li,
+.new-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  border-left: 4px solid #35353500;
+  padding-left: 8px;
+  font-size: 1.3rem;
+  border-radius: 5px;
+}
+
+.side-bar li:hover {
+  background-color: #353535;
+  border-left: 4px solid #c1d1e0;
+  cursor: pointer;
+}
+.new-list:hover {
+  background-color: #353535;
+  box-shadow: 0 0 0 1px #c1d1e0;
+  cursor: pointer;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.icon img {
+  width: 24px;
+  margin: auto;
+  filter: brightness(0) saturate(100%) invert(84%) sepia(7%) saturate(547%) hue-rotate(167deg) brightness(100%) contrast(88%);
+}
+
+h3,
+.due-date,
+.task-list-name {
+  color: #b2b2b2;
+}
+
+.main {
+  flex-basis: 80vw;
+  margin: 3px;
+  border-radius: 10px;
+  padding: 25px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tasks {
+  margin-bottom: auto;
+  margin-top: 10px;
+  overflow: auto;
+}
+
+.task {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 10vw 5px 0;
+  padding: 10px 10px;
+  border-radius: 10px;
+  background-color: rgba(41, 42, 42, 0.5);
+}
+
+.task-details {
+  display: grid;
+  column-gap: 10px;
+  grid-template-columns: 2;
+}
+.check-box {
+  width: 30px;
+  padding: 3px;
+  margin: 0;
+  grid-row: 1/3;
+  grid-column: 1/2;
+  box-sizing: content-box;
+}
+
+.check-box:hover,
+.remove:hover {
+  background-color: #353535;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.remove {
+  box-sizing: content-box;
+  width: 25px;
+  padding: 5px;
+}
+
+.task-name {
+  grid-row: 1/2;
+  grid-column: 2/3;
+  font-size: 1.1rem;
+}
+.task-list-name {
+  grid-row: 2/3;
+  grid-column: 2/3;
+  font-size: 0.9rem;
+}
+
+.add-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #c1d1e0;
+  width: 200px;
+  height: 50px;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  box-shadow: 2px 2px 5px 0 #c1d1e0;
+}
+.add-btn:active {
+  box-shadow: none;
+}
+
+.add-btn span {
+  color: #353535;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.add-btn img {
+  filter: brightness(0) saturate(100%) invert(10%) sepia(0%) saturate(5104%) hue-rotate(315deg) brightness(95%) contrast(73%);
 }

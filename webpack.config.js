@@ -21,10 +21,17 @@ module.exports = {
                     filename: "fonts/[name][ext]",
                 },
             },
-            // {
-            //     test: /\.html$/i,
-            //     loader: "html-loader",
-            // },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: "asset/resource",
+                generator: {
+                    filename: 'img/[name][ext]',
+                },
+            },
+            {
+                test: /\.html$/i,
+                loader: "html-loader",
+            },
         ],
     },
     plugins: [
