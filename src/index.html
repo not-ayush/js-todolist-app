@@ -59,30 +59,68 @@
       <div class="tasks">
         <div class="task">
           <div class="task-details">
-            <img class="check-box" src="./img/check.svg" alt="">
+            <img class="check-box" src="./img/check.svg" alt="" />
             <div class="task-name">This is the task</div>
             <div class="due-date task-list-name">Today</div>
+            <!-- <div class="more-details">
+              <ul>
+                <li class="desc">Description</li>
+                <li class="priority">Priority</li>
+              </ul>
+            </div> -->
           </div>
           <div class="task-opt">
-            <img class="remove" src="./img/remove.svg" alt="">
+            <img class="remove" src="./img/remove.svg" alt="" />
           </div>
         </div>
         <div class="task">
           <div class="task-details">
-            <img class="check-box" src="./img/check.svg" alt="">
+            <img class="check-box" src="./img/check.svg" alt="" />
             <div class="task-name">This is the task</div>
             <div class="due-date task-list-name">Today</div>
           </div>
           <div class="task-opt">
-            <img class="remove" src="./img/remove.svg" alt="">
+            <img class="remove" src="./img/remove.svg" alt="" />
           </div>
         </div>
       </div>
       <div class="main-footer">
-        <div class="add-btn">          
+        <div class="add-btn">
           <img class="add-icon" src="img/add-task.svg" alt="" />
           <span>Add task</span>
         </div>
+      </div>
+    </div>
+    <div class="add-task-dlg">
+      <div id="form-container">
+        <h1 class="form-head">Add a new Task</h1>
+        <form action="" method="post">
+          <div class="input-section">
+            <div class="field">
+              <label for="taskName">Enter your task's name</label>
+              <input type="text" id="taskName" name="taskName" placeholder="" />
+            </div>
+            <div class="field">
+              <label for="taskDate">When is the task due?</label>
+              <input type="date" id="taskDate" name="taskDate" placeholder="" />
+            </div>
+            <div class="field">
+              <label for="taskDesc">Describe the task further</label>
+              <textarea id="taskDesc" name="taskDesc" placeholder="" rows="2"></textarea>
+            </div>
+            <div class="field">
+              <div id="taskPriority">Priority Level</div>
+              <label for="high">High</label>
+              <input type="radio" id="high" name="taskPriority" value="High" />
+              <label for="medium">Medium</label>
+              <input type="radio" id="medium" name="taskPriority" value="Medium" />
+              <label for="low">Low</label>
+              <input type="radio" id="low" name="taskPriority" value="Low" />
+            </div>
+          </div>
+        </form>
+        <button id="form-submit">Submit</button>
+        <button id="form-cancel">Cancel</button>
       </div>
     </div>
   </body>

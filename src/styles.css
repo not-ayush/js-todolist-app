@@ -13,14 +13,6 @@ h2,
 span {
   color: #efefef;
 }
-
-/* 
-dark grey #222222
-active grey #353535
-icon grey #9AA5AF
-white #EFEFEF
-subtitle white #DADFDD
-*/
 li {
   list-style-type: none;
 }
@@ -73,7 +65,8 @@ body {
   border-radius: 5px;
 }
 
-.side-bar li:hover {
+.side-bar li:hover,
+li.active {
   background-color: #353535;
   border-left: 4px solid #c1d1e0;
   cursor: pointer;
@@ -161,6 +154,11 @@ h3,
   grid-column: 2/3;
   font-size: 1.1rem;
 }
+
+.task-name.done {
+  text-decoration: line-through;
+}
+
 .task-list-name {
   grid-row: 2/3;
   grid-column: 2/3;
@@ -196,3 +194,62 @@ h3,
 .add-btn img {
   filter: brightness(0) saturate(100%) invert(10%) sepia(0%) saturate(5104%) hue-rotate(315deg) brightness(95%) contrast(73%);
 }
+
+/* Pop up form styles */
+
+.add-task-dlg {
+  position: fixed;
+  background-color: #35353570;
+  height: 100vw;
+  width: 100vw;
+  display: none;
+}
+
+#form-container {
+  position: fixed;
+  background-color: #222222ea;
+  width: 50vw;
+  min-height: 50vh;
+  top: 15vh;
+  left: 25vw;
+  padding: 30px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+textarea {
+  width: 80%;
+  max-width: 100%;
+  max-height: 25vh;
+  resize: both;
+}
+label {
+  display: block;
+}
+
+#taskPriority ~ label {
+  display: inline;
+}
+input[type="radio"] {
+  margin: 0 10px 0 2px;
+}
+input[type="text"],
+textarea {
+  border-radius: 5px;
+  padding: 3px;
+  width: 80%;
+  font-size: 1.1rem;
+}
+
+.field {
+  padding: 5px 0;
+}
+
+.add-task-dlg button {
+  padding: 10px 5px;
+  width: 50%;
+  border-radius: 5px;
+}
+
