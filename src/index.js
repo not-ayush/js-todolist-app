@@ -121,7 +121,7 @@ document.querySelector("#clear-done").addEventListener("click", () => {
             delete tasks[activeList][curTaskName];
         }
     }
-    for (let i = 0; i < tasksContainer.children.length; i++) {
+    for (let i = tasksContainer.children.length - 1; i >= 0; i--) {
         if (tasksContainer.children[i].firstElementChild.firstElementChild.nextElementSibling.classList.contains("done")) {
             tasksContainer.children[i].remove();
         }
