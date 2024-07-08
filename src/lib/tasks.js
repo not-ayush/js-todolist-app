@@ -1,5 +1,5 @@
 let tasks = {
-    inbox: {
+    Inbox: {
         // taskname: {taskName: "", taskDate: "", taskDesc: "", taskPrior: "", taskStatus: bool},
 
     }

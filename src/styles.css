@@ -105,6 +105,25 @@ h3,
   justify-content: space-between;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header button {
+  background-color: #c1d1e043;
+  border: 2px solid #c1d1e0;
+  color: #c1d1e0;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.header button:active {
+  background-color: #c1d1e000;
+}
+
 .tasks {
   margin-bottom: auto;
   margin-top: 10px;
@@ -153,6 +172,7 @@ h3,
   grid-row: 1/2;
   grid-column: 2/3;
   font-size: 1.1rem;
+  cursor: pointer;
 }
 
 .task-name.done {
@@ -165,23 +185,16 @@ h3,
   font-size: 0.9rem;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
+.more-details {
+  grid-row-start: 3;
+  grid-column-start: 2;
+  font-size: 0.9rem;
+  color: #b2b2b2;
+  display: none;
 }
 
-.header button {
-  background-color: #c1d1e043;
-  border: 2px solid #c1d1e0;
-  color: #c1d1e0;
-  padding: 10px 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  margin: 0 5px;
-}
-
-.header button:active {
-  background-color: #c1d1e000;
+.more-details.expanded {
+  display: block;
 }
 
 .add-btn {
