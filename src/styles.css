@@ -165,6 +165,25 @@ h3,
   font-size: 0.9rem;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header button {
+  background-color: #c1d1e043;
+  border: 2px solid #c1d1e0;
+  color: #c1d1e0;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.header button:active {
+  background-color: #c1d1e000;
+}
+
 .add-btn {
   display: flex;
   align-items: center;

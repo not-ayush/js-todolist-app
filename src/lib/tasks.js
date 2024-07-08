@@ -1,8 +1,8 @@
 let tasks = {
-    inbox: [
-        // {taskName: "", taskDate: "", taskDesc: "", taskPrior: "", taskStatus: bool},
+    inbox: {
+        // taskname: {taskName: "", taskDate: "", taskDesc: "", taskPrior: "", taskStatus: bool},
 
-    ]
+    }
 }
 
 export {tasks}
