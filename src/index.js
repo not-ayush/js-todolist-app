@@ -1,7 +1,28 @@
 import "./styles.css";
-import { tasks } from "./lib/tasks";
 
 let activeList = "Inbox";
+let tasks; // the object that the session works with, and then writes to the storage if browser closoes/reloads
+
+// Retrieve data from localStorage when window loads
+window.onload = function () {
+    const savedData = JSON.parse(window.localStorage.getItem("tasksData"));
+    if (savedData) {
+        tasks = savedData;
+        console.log(`Retreived data succesfully!`);
+    } else {
+        tasks = tasksInit();
+    }
+    renderLists();
+    switchToList(activeList);
+};
+
+function tasksInit() {
+    return {
+        Inbox: {
+            // taskname: {taskName: "", taskDate: "", taskDesc: "", taskPrior: "", taskStatus: bool},
+        },
+    };
+}
 
 // task constructor
 function createTask(taskName, taskDate, taskDesc, taskPrior) {
@@ -160,7 +181,9 @@ document.querySelector("#delete-all").addEventListener("click", () => {
     });
 });
 
-function addNewListToDOM(newListName) {
+
+// list functionality
+function renderListToDOM(newListName) {
     const userListLi = document.createElement("li");
     userListLi.classList.add("user-list", "task-list");
 
@@ -188,7 +211,7 @@ function createNewTaskList(newListName) {
         return;
     }
     tasks[newListName] = {};
-    addNewListToDOM(newListName);
+    renderListToDOM(newListName);
     activeList = newListName;
     curListDOM.innerText = newListName;
     tasksContainer.innerHTML = "";
@@ -203,6 +226,15 @@ function switchToList(listName) {
     }
 }
 
+function renderLists() {
+    for (let curList in tasks) {
+        if (curList == "Inbox") {
+            continue;
+        }
+        renderListToDOM(curList);
+    }
+}
+
 // new list button
 document.querySelector(".new-list").addEventListener("click", () => {
     let newListName = prompt("Enter new list name: ");
@@ -212,11 +244,34 @@ document.querySelector(".new-list").addEventListener("click", () => {
         return;
     }
 });
-
 // switching list event
 document.querySelector(".side-bar").addEventListener("click", (e) => {
-    if (e.target.classList.contains("task-list")) {
-        switchToList(e.target.children[1].innerText);
+    const taskListItem = e.target.closest(".task-list");
+    if (taskListItem) {
+        switchToList(taskListItem.querySelector("span").innerText);
     }
 });
+
+
+// function for checking local storage support and availability
+function storageAvailable(type) {
+    let storage;
+    try {
+        storage = window[type];
+        const x = "__storage_test__";
+        storage.setItem(x, x);
+        storage.removeItem(x);
+        return true;
+    } catch (e) {
+        console.log(e);
+        return false;
+    }
+}
+if (!storageAvailable("localStorage")) {
+    alert("Your browser/window type doesn't support storage facility");
+}
+// Save data to localStorage
+window.onbeforeunload = function () {
+    window.localStorage.setItem("tasksData", JSON.stringify(tasks));
+};
 

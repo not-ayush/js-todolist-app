@@ -7,8 +7,7 @@ module.exports = {
         filename: "[name].js",
         path: path.resolve(__dirname, "dist"),
     },
-    devtool: 'inline-source-map',
-    mode: "development",
+    mode: "production",
     module: {
         rules: [
             {
@@ -44,6 +43,7 @@ module.exports = {
             scriptLoading: "defer",
         }),
     ],
+    devtool: 'inline-source-map',
     devServer: {
         static: "./dist",
     },
