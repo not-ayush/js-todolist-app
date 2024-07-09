@@ -267,7 +267,7 @@ label {
 input[type="radio"] {
   margin: 0 10px 0 2px;
 }
-input[type="text"],
+#taskName,
 textarea {
   border-radius: 5px;
   padding: 3px;
