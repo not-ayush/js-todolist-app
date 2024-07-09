@@ -238,7 +238,7 @@ function renderLists() {
 // new list button
 document.querySelector(".new-list").addEventListener("click", () => {
     let newListName = prompt("Enter new list name: ");
-    if (newListName != "") {
+    if (newListName) {
         createNewTaskList(newListName);
     } else {
         return;
